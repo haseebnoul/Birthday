@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A birthday surprise for Ifra Yousaf, from Haseeb Ahmad." />
+  <title>Happy Birthday, Meli Jan ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       FLOATING AMBIENT PARTICLES (rendered by JS)
+  ============================================================ -->
+  <div id="ambient-particles" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       PROGRESS BAR
+  ============================================================ -->
+  <nav id="progress-nav" aria-label="Journey progress" role="navigation">
+    <div class="progress-track">
+      <button class="progress-dot active" data-section="0" title="A Little Surprise">
+        <span class="dot-icon">🎁</span>
+        <span class="dot-label">Surprise</span>
+      </button>
+      <button class="progress-dot" data-section="1" title="Why You Are Special">
+        <span class="dot-icon">🌸</span>
+        <span class="dot-label">Special</span>
+      </button>
+      <button class="progress-dot" data-section="2" title="Things I Want You to Know">
+        <span class="dot-icon">💌</span>
+        <span class="dot-label">Know This</span>
+      </button>
+      <button class="progress-dot" data-section="3" title="Our Cute Little Corner">
+        <span class="dot-icon">🐼</span>
+        <span class="dot-label">Our Corner</span>
+      </button>
+      <button class="progress-dot" data-section="4" title="My Prayers for You">
+        <span class="dot-icon">🤲</span>
+        <span class="dot-label">Prayers</span>
+      </button>
+      <button class="progress-dot" data-section="5" title="My Hopes for Us">
+        <span class="dot-icon">🌙</span>
+        <span class="dot-label">Our Hopes</span>
+      </button>
+      <button class="progress-dot" data-section="6" title="One Last Letter">
+        <span class="dot-icon">❤️</span>
+        <span class="dot-label">Letter</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       AUDIO PLAYER
+  ============================================================ -->
+  <div id="audio-player" class="audio-player" aria-label="Background music player">
+    <button id="audio-toggle" class="audio-btn" aria-label="Play background music" title="Play / Pause music">
+      <span id="audio-icon">🎵</span>
+    </button>
+    <span id="audio-label">Play Music</span>
+    <audio id="bg-audio" loop>
+      <!-- Replace src with your audio file path, e.g. src="music/song.mp3" -->
+      <source id="audio-source" src="" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <!-- ============================================================
+       SECTION 0 — A LITTLE SURPRISE (Landing / Envelope)
+  ============================================================ -->
+  <section id="section-0" class="section active" aria-labelledby="s0-heading">
+
+    <div class="s0-inner">
+      <!-- SVG Envelope / Gift Box -->
+      <div class="envelope-wrap" aria-hidden="true">
+        <div class="envelope" id="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <div class="envelope-heart">💌</div>
+          </div>
+          <div class="envelope-ribbon">
+            <div class="ribbon-h"></div>
+            <div class="ribbon-v"></div>
+            <div class="ribbon-bow">🎀</div>
+          </div>
+        </div>
+        <!-- Floating petals -->
+        <div class="petal p1" aria-hidden="true">🌸</div>
+        <div class="petal p2" aria-hidden="true">💗</div>
+        <div class="petal p3" aria-hidden="true">✨</div>
+        <div class="petal p4" aria-hidden="true">🌸</div>
+        <div class="petal p5" aria-hidden="true">💕</div>
+      </div>
+
+      <h1 id="s0-heading" class="s0-tagline">
+        For the girl who makes my world<br/>a little more beautiful… 💌
+      </h1>
+      <p class="s0-sub">To my <strong>Ifra Yousaf</strong>, Meli Jan ❤️</p>
+      <p class="s0-hint">Haseeb has made a little surprise just for you.<br/>Will you open it?</p>
+
+      <button class="btn-primary pulse-btn" id="open-btn" aria-label="Open your birthday surprise">
+        Open Your Little Surprise 🎀
+      </button>
+    </div>
+
+    <!-- Reveal overlay after opening -->
+    <div id="reveal-overlay" class="reveal-overlay hidden" aria-live="polite">
+      <div class="reveal-characters" aria-hidden="true">
+        <!-- Bubu (Bear) & Dudu (Panda) SVG illustrations -->
+        <div class="character bear-character">
+          <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-label="Bear character holding a heart">
+            <!-- Bear body -->
+            <ellipse cx="60" cy="100" rx="35" ry="38" fill="#c8956c"/>
+            <!-- Bear tummy -->
+            <ellipse cx="60" cy="108" rx="22" ry="26" fill="#e8b896"/>
+            <!-- Bear head -->
+            <circle cx="60" cy="58" r="30" fill="#c8956c"/>
+            <!-- Bear ears -->
+            <circle cx="37" cy="34" r="12" fill="#c8956c"/>
+            <circle cx="83" cy="34" r="12" fill="#c8956c"/>
+            <circle cx="37" cy="34" r="7" fill="#e8a880"/>
+            <circle cx="83" cy="34" r="7" fill="#e8a880"/>
+            <!-- Bear face -->
+            <circle cx="52" cy="55" r="5" fill="#5a3825"/>
+            <circle cx="68" cy="55" r="5" fill="#5a3825"/>
+            <!-- Eye shine -->
+            <circle cx="54" cy="53" r="1.5" fill="white"/>
+            <circle cx="70" cy="53" r="1.5" fill="white"/>
+            <!-- Nose -->
+            <ellipse cx="60" cy="64" rx="5" ry="3.5" fill="#a06040"/>
+            <!-- Smile -->
+            <path d="M52 70 Q60 77 68 70" stroke="#a06040" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Cheeks -->
+            <circle cx="44" cy="65" r="7" fill="#f4a0a0" opacity="0.6"/>
+            <circle cx="76" cy="65" r="7" fill="#f4a0a0" opacity="0.6"/>
+            <!-- Arms holding heart -->
+            <ellipse cx="28" cy="110" rx="12" ry="8" fill="#c8956c" transform="rotate(-30 28 110)"/>
+            <ellipse cx="92" cy="110" rx="12" ry="8" fill="#c8956c" transform="rotate(30 92 110)"/>
+            <!-- Heart in paws -->
+            <text x="48" y="130" font-size="22" fill="#e05080">❤️</text>
+          </svg>
+        </div>
+        <div class="character panda-character">
+          <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" aria-label="Panda character waving">
+            <!-- Panda body -->
+            <ellipse cx="60" cy="100" rx="35" ry="38" fill="white"/>
+            <!-- Panda tummy -->
+            <ellipse cx="60" cy="110" rx="20" ry="24" fill="#f8f0f0"/>
+            <!-- Panda head -->
+            <circle cx="60" cy="58" r="30" fill="white"/>
+            <!-- Panda ears -->
+            <circle cx="37" cy="34" r="13" fill="#2a2a2a"/>
+            <circle cx="83" cy="34" r="13" fill="#2a2a2a"/>
+            <!-- Eye patches -->
+            <ellipse cx="50" cy="55" rx="10" ry="9" fill="#2a2a2a"/>
+            <ellipse cx="70" cy="55" rx="10" ry="9" fill="#2a2a2a"/>
+            <!-- Eyes -->
+            <circle cx="50" cy="55" r="5" fill="white"/>
+            <circle cx="70" cy="55" r="5" fill="white"/>
+            <circle cx="51" cy="55" r="3" fill="#1a1a1a"/>
+            <circle cx="71" cy="55" r="3" fill="#1a1a1a"/>
+            <!-- Eye shine -->
+            <circle cx="52" cy="53" r="1.2" fill="white"/>
+            <circle cx="72" cy="53" r="1.2" fill="white"/>
+            <!-- Nose -->
+            <ellipse cx="60" cy="65" rx="4" ry="3" fill="#c06070"/>
+            <!-- Smile -->
+            <path d="M53 72 Q60 79 67 72" stroke="#c06070" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Cheeks -->
+            <circle cx="43" cy="67" r="7" fill="#ffb3c1" opacity="0.5"/>
+            <circle cx="77" cy="67" r="7" fill="#ffb3c1" opacity="0.5"/>
+            <!-- Arms -->
+            <ellipse cx="28" cy="108" rx="12" ry="8" fill="#2a2a2a" transform="rotate(-25 28 108)"/>
+            <ellipse cx="92" cy="108" rx="12" ry="8" fill="#2a2a2a" transform="rotate(25 92 108)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="reveal-hearts" aria-hidden="true">
+        <span>💗</span><span>✨</span><span>💕</span><span>🌸</span><span>💖</span><span>⭐</span>
+      </div>
+      <div class="reveal-message">
+        <h2>Happy Birthday, Meli Shahzadi! 👑💗</h2>
+        <p>Today is your day, but somehow, I feel like I am the lucky one. Because the world became a more beautiful place for me when you became someone so special in my life.</p>
+        <p>This little website is my way of giving you something made with time, thought, and all the feelings I sometimes struggle to express in words.</p>
+        <p class="reveal-welcome">Welcome to your little world, Meli Jan 💗. Everything here is for you.</p>
+        <button class="btn-primary" id="begin-journey-btn" aria-label="Begin the journey">
+          Begin Your Journey 🌸
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       SECTION 1 — WHY YOU ARE SPECIAL
+  ============================================================ -->
+  <section id="section-1" class="section hidden" aria-labelledby="s1-heading">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-icon" aria-hidden="true">🌸</div>
+        <h2 id="s1-heading">Why You Are Special</h2>
+        <p class="section-subtitle">One card at a time, Meli Jan. Let your heart read slowly.</p>
+      </div>
+
+      <div class="card-reveal-container" id="special-cards">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <div class="card-nav">
+        <button class="btn-secondary" id="prev-special" aria-label="Previous card" disabled>← Back</button>
+        <span id="special-counter" class="card-counter" aria-live="polite">1 / 6</span>
+        <button class="btn-secondary" id="next-special" aria-label="Next card">Next →</button>
+      </div>
+
+      <div class="section-footer">
+        <button class="btn-primary" id="s1-next" aria-label="Continue to next section">
+          Continue 💌
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 — THINGS I WANT YOU TO KNOW (Heart Petals)
+  ============================================================ -->
+  <section id="section-2" class="section hidden" aria-labelledby="s2-heading">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-icon" aria-hidden="true">💌</div>
+        <h2 id="s2-heading">Things I Want You to Know</h2>
+        <p class="section-subtitle">Tap each heart to read what's inside, Meli Jan. 🌸</p>
+      </div>
+
+      <div class="hearts-garden" id="hearts-garden" role="list">
+        <!-- Heart petals injected by JS -->
+      </div>
+
+      <!-- Message display panel -->
+      <div id="heart-message-panel" class="heart-message-panel hidden" aria-live="polite" role="region" aria-label="Heart message">
+        <button class="close-panel" id="close-heart-msg" aria-label="Close message">✕</button>
+        <div class="heart-msg-icon" aria-hidden="true"></div>
+        <h3 class="heart-msg-title"></h3>
+        <p class="heart-msg-body"></p>
+      </div>
+
+      <div class="section-footer">
+        <button class="btn-primary" id="s2-next" aria-label="Continue to next section">
+          Continue 🐼
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3 — OUR CUTE LITTLE CORNER (Characters + Nicknames)
+  ============================================================ -->
+  <section id="section-3" class="section hidden" aria-labelledby="s3-heading">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-icon" aria-hidden="true">🐼</div>
+        <h2 id="s3-heading">Our Cute Little Corner</h2>
+        <p class="section-subtitle">Seven little gifts. Each one holds a name I call you. Tap to open. 🎁</p>
+      </div>
+
+      <!-- Gift boxes for nicknames -->
+      <div class="gifts-row" id="gifts-row" role="list">
+        <!-- Gifts injected by JS -->
+      </div>
+
+      <!-- Gift message panel -->
+      <div id="gift-message-panel" class="gift-message-panel hidden" aria-live="polite">
+        <button class="close-panel" id="close-gift-msg" aria-label="Close gift message">✕</button>
+        <div class="gift-msg-emoji" aria-hidden="true"></div>
+        <h3 class="gift-msg-nickname"></h3>
+        <p class="gift-msg-body"></p>
+      </div>
+
+      <!-- Cute character scenes -->
+      <div class="character-scenes" aria-label="Cute character illustrations">
+        <div class="scene-row">
+
+          <!-- Scene 1: Panda offering flower to Bear -->
+          <figure class="scene-card" tabindex="0" aria-describedby="scene1-caption">
+            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Background -->
+              <ellipse cx="100" cy="160" rx="90" ry="18" fill="#f5e6d3" opacity="0.5"/>
+              <!-- Panda (left) -->
+              <ellipse cx="55" cy="130" rx="28" ry="32" fill="white"/>
+              <ellipse cx="55" cy="138" rx="17" ry="20" fill="#f8f0f0"/>
+              <circle cx="55" cy="90" r="25" fill="white"/>
+              <circle cx="38" cy="70" r="11" fill="#333"/>
+              <circle cx="72" cy="70" r="11" fill="#333"/>
+              <ellipse cx="46" cy="88" rx="9" ry="8" fill="#333"/>
+              <ellipse cx="64" cy="88" rx="9" ry="8" fill="#333"/>
+              <circle cx="46" cy="88" r="5" fill="white"/>
+              <circle cx="64" cy="88" r="5" fill="white"/>
+              <circle cx="47" cy="87" r="2.5" fill="#111"/>
+              <circle cx="65" cy="87" r="2.5" fill="#111"/>
+              <ellipse cx="55" cy="97" rx="3.5" ry="2.5" fill="#c06070"/>
+              <path d="M49 103 Q55 109 61 103" stroke="#c06070" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <circle cx="40" cy="99" r="6" fill="#ffb3c1" opacity="0.5"/>
+              <circle cx="70" cy="99" r="6" fill="#ffb3c1" opacity="0.5"/>
+              <!-- Panda arm offering flower -->
+              <ellipse cx="80" cy="120" rx="10" ry="7" fill="#333" transform="rotate(-40 80 120)"/>
+              <!-- Flower -->
+              <circle cx="92" cy="108" r="6" fill="#ff9eb5"/>
+              <circle cx="83" cy="105" r="5" fill="#ff9eb5"/>
+              <circle cx="85" cy="115" r="5" fill="#ff9eb5"/>
+              <circle cx="95" cy="115" r="5" fill="#ff9eb5"/>
+              <circle cx="98" cy="107" r="5" fill="#ff9eb5"/>
+              <circle cx="90" cy="110" r="5" fill="#fff0a0"/>
+              <!-- Stem -->
+              <line x1="90" y1="115" x2="90" y2="130" stroke="#6abf69" stroke-width="2"/>
+              <!-- Bear (right) -->
+              <ellipse cx="148" cy="130" rx="28" ry="32" fill="#c8956c"/>
+              <ellipse cx="148" cy="140" rx="18" ry="22" fill="#e8b896"/>
+              <circle cx="148" cy="90" r="25" fill="#c8956c"/>
+              <circle cx="131" cy="70" r="11" fill="#c8956c"/>
+              <circle cx="165" cy="70" r="11" fill="#c8956c"/>
+              <circle cx="131" cy="70" r="6" fill="#e8a880"/>
+              <circle cx="165" cy="70" r="6" fill="#e8a880"/>
+              <circle cx="141" cy="88" r="4.5" fill="#5a3825"/>
+              <circle cx="155" cy="88" r="4.5" fill="#5a3825"/>
+              <circle cx="142" cy="87" r="1.5" fill="white"/>
+              <circle cx="156" cy="87" r="1.5" fill="white"/>
+              <ellipse cx="148" cy="96" rx="4" ry="3" fill="#a06040"/>
+              <path d="M142 102 Q148 108 154 102" stroke="#a06040" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <circle cx="133" cy="99" r="6" fill="#f4a0a0" opacity="0.5"/>
+              <circle cx="163" cy="99" r="6" fill="#f4a0a0" opacity="0.5"/>
+              <!-- Bear arm receiving -->
+              <ellipse cx="122" cy="118" rx="10" ry="7" fill="#c8956c" transform="rotate(40 122 118)"/>
+            </svg>
+            <figcaption id="scene1-caption" class="scene-caption">"Here, Meli Jan. 🌸 A flower, as gentle as your smile."</figcaption>
+          </figure>
+
+          <!-- Scene 2: Bear with birthday cake -->
+          <figure class="scene-card" tabindex="0" aria-describedby="scene2-caption">
+            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="100" cy="162" rx="90" ry="16" fill="#f5e6d3" opacity="0.5"/>
+              <!-- Panda holding cake -->
+              <ellipse cx="100" cy="130" rx="30" ry="34" fill="white"/>
+              <ellipse cx="100" cy="140" rx="19" ry="22" fill="#f8f0f0"/>
+              <circle cx="100" cy="87" r="27" fill="white"/>
+              <circle cx="81" cy="66" r="12" fill="#333"/>
+              <circle cx="119" cy="66" r="12" fill="#333"/>
+              <ellipse cx="90" cy="86" rx="10" ry="9" fill="#333"/>
+              <ellipse cx="110" cy="86" rx="10" ry="9" fill="#333"/>
+              <circle cx="90" cy="86" r="5.5" fill="white"/>
+              <circle cx="110" cy="86" r="5.5" fill="white"/>
+              <circle cx="91" cy="85" r="3" fill="#111"/>
+              <circle cx="111" cy="85" r="3" fill="#111"/>
+              <ellipse cx="100" cy="96" rx="4" ry="3" fill="#c06070"/>
+              <path d="M93 103 Q100 110 107 103" stroke="#c06070" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Arms holding cake out -->
+              <ellipse cx="70" cy="130" rx="13" ry="8" fill="#333" transform="rotate(30 70 130)"/>
+              <ellipse cx="130" cy="130" rx="13" ry="8" fill="#333" transform="rotate(-30 130 130)"/>
+              <!-- Birthday Cake -->
+              <rect x="70" y="130" width="60" height="30" rx="6" fill="#ffb3c1"/>
+              <rect x="70" y="118" width="60" height="18" rx="6" fill="#ffd6e0"/>
+              <rect x="75" y="108" width="50" height="16" rx="5" fill="#fff0a0"/>
+              <!-- Frosting drips -->
+              <path d="M75 108 Q80 115 85 108 Q90 115 95 108 Q100 115 105 108 Q110 115 115 108 Q120 115 125 108" fill="#fffde0" stroke="none"/>
+              <!-- Candles -->
+              <rect x="86" y="95" width="5" height="14" rx="2" fill="#ff9eb5"/>
+              <rect x="97" y="92" width="5" height="17" rx="2" fill="#a0c4ff"/>
+              <rect x="108" y="95" width="5" height="14" rx="2" fill="#b5ead7"/>
+              <!-- Flames -->
+              <ellipse cx="88.5" cy="93" rx="3" ry="5" fill="#ffd700"/>
+              <ellipse cx="99.5" cy="90" rx="3" ry="5" fill="#ffd700"/>
+              <ellipse cx="110.5" cy="93" rx="3" ry="5" fill="#ffd700"/>
+              <!-- Stars/sparkles -->
+              <text x="60" y="75" font-size="14">✨</text>
+              <text x="128" y="72" font-size="12">⭐</text>
+            </svg>
+            <figcaption id="scene2-caption" class="scene-caption">"Meli Ladu, I made you a cake. Well — I bought one. But I thought of you the entire time. 🎂😇"</figcaption>
+          </figure>
+
+          <!-- Scene 3: Couple hugging -->
+          <figure class="scene-card" tabindex="0" aria-describedby="scene3-caption">
+            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <ellipse cx="100" cy="162" rx="88" ry="16" fill="#f5e6d3" opacity="0.5"/>
+              <!-- Bear (left, hugging) -->
+              <ellipse cx="72" cy="130" rx="32" ry="36" fill="#c8956c"/>
+              <ellipse cx="72" cy="142" rx="20" ry="24" fill="#e8b896"/>
+              <circle cx="72" cy="85" r="27" fill="#c8956c"/>
+              <circle cx="54" cy="63" r="12" fill="#c8956c"/>
+              <circle cx="90" cy="63" r="12" fill="#c8956c"/>
+              <circle cx="54" cy="63" r="7" fill="#e8a880"/>
+              <circle cx="90" cy="63" r="7" fill="#e8a880"/>
+              <circle cx="64" cy="84" r="5" fill="#5a3825"/>
+              <circle cx="80" cy="84" r="5" fill="#5a3825"/>
+              <ellipse cx="72" cy="93" rx="4.5" ry="3.5" fill="#a06040"/>
+              <path d="M65 99 Q72 106 79 99" stroke="#a06040" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="57" cy="95" r="7" fill="#f4a0a0" opacity="0.6"/>
+              <circle cx="87" cy="95" r="7" fill="#f4a0a0" opacity="0.6"/>
+              <!-- Bear arm wrapping around panda -->
+              <path d="M100 130 Q120 110 135 130" stroke="#c8956c" stroke-width="14" fill="none" stroke-linecap="round"/>
+              <!-- Panda (right) -->
+              <ellipse cx="128" cy="130" rx="30" ry="34" fill="white"/>
+              <ellipse cx="128" cy="140" rx="19" ry="22" fill="#f8f0f0"/>
+              <circle cx="128" cy="87" r="25" fill="white"/>
+              <circle cx="111" cy="67" r="11" fill="#333"/>
+              <circle cx="145" cy="67" r="11" fill="#333"/>
+              <ellipse cx="118" cy="86" rx="9" ry="8" fill="#333"/>
+              <ellipse cx="138" cy="86" rx="9" ry="8" fill="#333"/>
+              <circle cx="118" cy="86" r="5" fill="white"/>
+              <circle cx="138" cy="86" r="5" fill="white"/>
+              <circle cx="119" cy="85" r="2.5" fill="#111"/>
+              <circle cx="139" cy="85" r="2.5" fill="#111"/>
+              <ellipse cx="128" cy="96" rx="3.5" ry="2.5" fill="#c06070"/>
+              <path d="M122 102 Q128 108 134 102" stroke="#c06070" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <!-- Panda arm wrapping around bear -->
+              <path d="M100 128 Q80 112 65 132" stroke="#333" stroke-width="12" fill="none" stroke-linecap="round"/>
+              <!-- Floating hearts above them -->
+              <text x="88" y="58" font-size="16">💗</text>
+              <text x="108" y="42" font-size="14">❤️</text>
+              <text x="122" y="55" font-size="12">💕</text>
+            </svg>
+            <figcaption id="scene3-caption" class="scene-caption">"The best kind of hug is the kind that doesn't have a reason. Happy Birthday, Meli Jan. 💗"</figcaption>
+          </figure>
+
+          <!-- Scene 4: Under umbrella -->
+          <figure class="scene-card" tabindex="0" aria-describedby="scene4-caption">
+            <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Rain drops -->
+              <g opacity="0.5" fill="#a0c4ff">
+                <ellipse cx="20" cy="20" rx="2" ry="5"/>
+                <ellipse cx="40" cy="35" rx="2" ry="5"/>
+                <ellipse cx="160" cy="15" rx="2" ry="5"/>
+                <ellipse cx="175" cy="40" rx="2" ry="5"/>
+                <ellipse cx="190" cy="25" rx="2" ry="5"/>
+                <ellipse cx="10" cy="55" rx="2" ry="5"/>
+                <ellipse cx="185" cy="60" rx="2" ry="5"/>
+              </g>
+              <!-- Ground -->
+              <ellipse cx="100" cy="170" rx="88" ry="14" fill="#f5e6d3" opacity="0.5"/>
+              <!-- Umbrella -->
+              <path d="M60 85 Q100 30 140 85" fill="#ff9eb5"/>
+              <path d="M60 85 Q100 30 140 85 Q140 85 100 85 Z" fill="none" stroke="#e07090" stroke-width="2"/>
+              <!-- Umbrella ribs -->
+              <line x1="100" y1="45" x2="60" y2="85" stroke="#e07090" stroke-width="1.5"/>
+              <line x1="100" y1="45" x2="80" y2="85" stroke="#e07090" stroke-width="1.5"/>
+              <line x1="100" y1="45" x2="100" y2="85" stroke="#e07090" stroke-width="1.5"/>
+              <line x1="100" y1="45" x2="120" y2="85" stroke="#e07090" stroke-width="1.5"/>
+              <line x1="100" y1="45" x2="140" y2="85" stroke="#e07090" stroke-width="1.5"/>
+              <!-- Umbrella handle -->
+              <line x1="100" y1="45" x2="100" y2="140" stroke="#c06080" stroke-width="3" stroke-linecap="round"/>
+              <path d="M100 140 Q95 155 88 152 Q82 150 82 142" fill="none" stroke="#c06080" stroke-width="3" stroke-linecap="round"/>
+              <!-- Bear (left, smaller) -->
+              <circle cx="82" cy="122" r="18" fill="#c8956c"/>
+              <circle cx="72" cy="106" r="8" fill="#c8956c"/>
+              <circle cx="92" cy="106" r="8" fill="#c8956c"/>
+              <circle cx="72" cy="106" r="4.5" fill="#e8a880"/>
+              <circle cx="92" cy="106" r="4.5" fill="#e8a880"/>
+              <circle cx="77" cy="120" r="3.5" fill="#5a3825"/>
+              <circle cx="87" cy="120" r="3.5" fill="#5a3825"/>
+              <ellipse cx="82" cy="127" rx="3" ry="2.5" fill="#a06040"/>
+              <path d="M78 132 Q82 136 86 132" stroke="#a06040" stroke-width="1.5" fill="none"/>
+              <ellipse cx="82" cy="150" rx="22" ry="26" fill="#c8956c"/>
+              <!-- Panda (right, smaller) -->
+              <circle cx="118" cy="122" r="18" fill="white"/>
+              <circle cx="108" cy="106" r="8" fill="#333"/>
+              <circle cx="128" cy="106" r="8" fill="#333"/>
+              <ellipse cx="110" cy="121" rx="7" ry="6" fill="#333"/>
+              <ellipse cx="126" cy="121" rx="7" ry="6" fill="#333"/>
+              <circle cx="110" cy="121" r="4" fill="white"/>
+              <circle cx="126" cy="121" r="4" fill="white"/>
+              <circle cx="111" cy="120" r="2" fill="#111"/>
+              <circle cx="127" cy="120" r="2" fill="#111"/>
+              <ellipse cx="118" cy="128" rx="3" ry="2.5" fill="#c06070"/>
+              <path d="M114 133 Q118 137 122 133" stroke="#c06070" stroke-width="1.5" fill="none"/>
+              <ellipse cx="118" cy="150" rx="22" ry="26" fill="white"/>
+            </svg>
+            <figcaption id="scene4-caption" class="scene-caption">"Even the rainy days are a little warmer when you are nearby. 🌧️💗"</figcaption>
+          </figure>
+
+          <!-- Scene 5: Looking at moon together -->
+          <figure class="scene-card" tabindex="0" aria-describedby="scene5-caption">
+            <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Night sky -->
+              <rect x="0" y="0" width="200" height="190" rx="16" fill="#1a1a4e" opacity="0.15"/>
+              <!-- Stars -->
+              <circle cx="20" cy="20" r="1.5" fill="#ffd700"/>
+              <circle cx="50" cy="10" r="1" fill="white"/>
+              <circle cx="80" cy="18" r="2" fill="#ffd700"/>
+              <circle cx="130" cy="8" r="1.5" fill="white"/>
+              <circle cx="160" cy="20" r="1" fill="#ffd700"/>
+              <circle cx="185" cy="12" r="2" fill="white"/>
+              <circle cx="10" cy="45" r="1" fill="white"/>
+              <circle cx="170" cy="40" r="1.5" fill="#ffd700"/>
+              <!-- Moon -->
+              <circle cx="100" cy="50" r="28" fill="#fff8dc"/>
+              <circle cx="112" cy="42" r="22" fill="#1a1a4e" opacity="0.12"/>
+              <!-- Moon craters -->
+              <circle cx="88" cy="45" r="4" fill="#f0e8b0" opacity="0.6"/>
+              <circle cx="108" cy="60" r="3" fill="#f0e8b0" opacity="0.6"/>
+              <circle cx="95" cy="35" r="2.5" fill="#f0e8b0" opacity="0.6"/>
+              <!-- Ground / hill -->
+              <ellipse cx="100" cy="175" rx="100" ry="25" fill="#f5e6d3" opacity="0.6"/>
+              <!-- Bear sitting (left) -->
+              <circle cx="70" cy="148" r="20" fill="#c8956c"/>
+              <circle cx="57" cy="132" r="9" fill="#c8956c"/>
+              <circle cx="83" cy="132" r="9" fill="#c8956c"/>
+              <circle cx="57" cy="132" r="5" fill="#e8a880"/>
+              <circle cx="83" cy="132" r="5" fill="#e8a880"/>
+              <circle cx="64" cy="145" r="3.5" fill="#5a3825"/>
+              <circle cx="76" cy="145" r="3.5" fill="#5a3825"/>
+              <ellipse cx="70" cy="153" rx="3" ry="2" fill="#a06040"/>
+              <ellipse cx="70" cy="168" rx="22" ry="20" fill="#c8956c"/>
+              <!-- Panda sitting (right) -->
+              <circle cx="130" cy="148" r="20" fill="white"/>
+              <circle cx="117" cy="132" r="9" fill="#333"/>
+              <circle cx="143" cy="132" r="9" fill="#333"/>
+              <ellipse cx="121" cy="146" rx="8" ry="7" fill="#333"/>
+              <ellipse cx="139" cy="146" rx="8" ry="7" fill="#333"/>
+              <circle cx="121" cy="146" r="4.5" fill="white"/>
+              <circle cx="139" cy="146" r="4.5" fill="white"/>
+              <circle cx="122" cy="145" r="2.5" fill="#111"/>
+              <circle cx="140" cy="145" r="2.5" fill="#111"/>
+              <ellipse cx="130" cy="153" rx="3" ry="2" fill="#c06070"/>
+              <ellipse cx="130" cy="168" rx="22" ry="20" fill="white"/>
+              <!-- Hand holding between them -->
+              <ellipse cx="100" cy="170" rx="10" ry="5" fill="#d4a080" opacity="0.7"/>
+            </svg>
+            <figcaption id="scene5-caption" class="scene-caption">"Meli Mahrukh, may every moon you look at carry a quiet prayer for your peace. 🌙✨"</figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+      <!-- Playful mini quiz -->
+      <div class="mini-quiz" id="mini-quiz">
+        <h3 class="quiz-title">A Little Game 🎮</h3>
+        <div id="quiz-container">
+          <!-- Quiz content injected by JS -->
+        </div>
+      </div>
+
+      <div class="section-footer">
+        <button class="btn-primary" id="s3-next" aria-label="Continue to next section">
+          Continue 🤲
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 — MY PRAYERS FOR YOU
+  ============================================================ -->
+  <section id="section-4" class="section hidden" aria-labelledby="s4-heading">
+    <div class="section-inner prayers-inner">
+      <div class="section-header">
+        <div class="section-icon" aria-hidden="true">🤲</div>
+        <h2 id="s4-heading">My Prayers for Meli Jan</h2>
+        <p class="section-subtitle">With humility, sincerity, and a heart full of hope.</p>
+      </div>
+
+      <!-- Decorative moon / stars background -->
+      <div class="prayer-sky" aria-hidden="true">
+        <div class="moon-illus">🌙</div>
+        <div class="star-field">
+          <span class="star">✦</span><span class="star">✧</span><span class="star">✦</span>
+          <span class="star">⭐</span><span class="star">✦</span><span class="star">✧</span>
+          <span class="star">✦</span><span class="star">✦</span><span class="star">✧</span>
+        </div>
+        <div class="lantern" aria-hidden="true">🪔</div>
+        <div class="lantern l2" aria-hidden="true">🪔</div>
+      </div>
+
+      <div class="prayer-cards" id="prayer-cards">
+        <!-- Prayer cards injected by JS -->
+      </div>
+
+      <!-- Personal dua -->
+      <div class="personal-dua">
+        <div class="dua-header" aria-hidden="true">🤲</div>
+        <p class="dua-opening">Ya Allah,</p>
+        <p>You know what is in my heart better than I can ever explain it. Please bless Ifra Yousaf with happiness, health, peace, and goodness. Protect her and her family, ease their difficulties, accept their sincere prayers, and grant them barakah in their lives.</p>
+        <p>Ya Allah, help me become a person who treats her with honesty, patience, respect, and kindness. If a future together is good for us, guide us toward it in a way that pleases You. Put goodness in our intentions and make whatever You decree best for both of us.</p>
+        <p class="dua-closing">Ameen, Ya Rabb-ul-Alameen. 🤲❤️</p>
+      </div>
+
+      <div class="section-footer">
+        <button class="btn-primary" id="s4-next" aria-label="Continue to next section">
+          Continue 🌙
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5 — MY HOPES FOR US (Timeline)
+  ============================================================ -->
+  <section id="section-5" class="section hidden" aria-labelledby="s5-heading">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-icon" aria-hidden="true">🌙</div>
+        <h2 id="s5-heading">Meli Shareek-e-Hayat, A Future I Pray For</h2>
+        <p class="section-subtitle">Not a promise about what will be — a prayer about what I hope for. 🌸</p>
+      </div>
+
+      <div class="hopes-intro">
+        <p>Meli Shareek-e-Hayat, I cannot predict every chapter of life, and I do not want to make promises about things that only time and Allah know. But I can tell you what I hope for.</p>
+        <p>I hope we keep growing, keep understanding each other, and keep learning how to love in ways that make both our lives better. I hope we celebrate the good days with gratitude and meet the difficult days with patience.</p>
+        <p>And if Allah writes a beautiful future for us together, I pray it is a future filled with peace, respect, sincere affection, family blessings, and countless little moments that make us smile.</p>
+      </div>
+
+      <!-- Timeline / stepping stones -->
+      <div class="hopes-timeline" id="hopes-timeline" role="list">
+        <!-- Stones injected by JS -->
+      </div>
+
+      <!-- YES question game -->
+      <div class="yes-game" id="yes-game">
+        <div class="yes-panda" aria-hidden="true">
+          <svg viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg" aria-label="Cute panda holding a heart">
+            <ellipse cx="60" cy="105" rx="32" ry="28" fill="white"/>
+            <ellipse cx="60" cy="112" rx="20" ry="18" fill="#f8f0f0"/>
+            <circle cx="60" cy="65" r="28" fill="white"/>
+            <circle cx="43" cy="43" r="13" fill="#333"/>
+            <circle cx="77" cy="43" r="13" fill="#333"/>
+            <ellipse cx="49" cy="63" rx="11" ry="10" fill="#333"/>
+            <ellipse cx="71" cy="63" rx="11" ry="10" fill="#333"/>
+            <circle cx="49" cy="63" r="6" fill="white"/>
+            <circle cx="71" cy="63" r="6" fill="white"/>
+            <circle cx="50" cy="62" r="3.5" fill="#111"/>
+            <circle cx="72" cy="62" r="3.5" fill="#111"/>
+            <circle cx="51" cy="60" r="1.5" fill="white"/>
+            <circle cx="73" cy="60" r="1.5" fill="white"/>
+            <ellipse cx="60" cy="73" rx="4" ry="3" fill="#c06070"/>
+            <path d="M53 80 Q60 87 67 80" stroke="#c06070" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="42" cy="75" r="8" fill="#ffb3c1" opacity="0.5"/>
+            <circle cx="78" cy="75" r="8" fill="#ffb3c1" opacity="0.5"/>
+            <!-- Arms holding heart up -->
+            <ellipse cx="35" cy="100" rx="14" ry="8" fill="#333" transform="rotate(-50 35 100)"/>
+            <ellipse cx="85" cy="100" rx="14" ry="8" fill="#333" transform="rotate(50 85 100)"/>
+            <text x="43" y="118" font-size="24">🥺</text>
+          </svg>
+        </div>
+        <div class="yes-question-area">
+          <p class="yes-intro" id="yes-intro">Meli Jan… can I ask you one very important question? 🥺❤️</p>
+          <p class="yes-question hidden" id="yes-question">Do you love Haseeb Ahmad?</p>
+          <div class="yes-buttons hidden" id="yes-buttons">
+            <button class="btn-yes" id="btn-yes" aria-label="Yes, my Haseeb!">YES, MY HASEEB! ❤️</button>
+            <button class="btn-no" id="btn-no" aria-label="No">NO 🙈</button>
+          </div>
+          <p class="yes-caption hidden" id="yes-caption" aria-live="polite"></p>
+          <button class="btn-secondary hidden" id="show-yes-question" aria-label="Continue">Continue 💌</button>
+        </div>
+      </div>
+
+      <!-- YES result -->
+      <div class="yes-result hidden" id="yes-result" aria-live="polite">
+        <div class="yes-confetti" id="yes-confetti" aria-hidden="true"></div>
+        <div class="yes-result-inner">
+          <div class="yes-hug-anim" aria-hidden="true">
+            <!-- Bear + Panda hugging -->
+            <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-label="Bear and Panda hugging with joy">
+              <!-- Bear -->
+              <ellipse cx="75" cy="125" rx="30" ry="34" fill="#c8956c"/>
+              <circle cx="75" cy="85" r="26" fill="#c8956c"/>
+              <circle cx="57" cy="64" r="12" fill="#c8956c"/>
+              <circle cx="93" cy="64" r="12" fill="#c8956c"/>
+              <circle cx="57" cy="64" r="7" fill="#e8a880"/>
+              <circle cx="93" cy="64" r="7" fill="#e8a880"/>
+              <circle cx="67" cy="84" r="5" fill="#5a3825"/>
+              <circle cx="83" cy="84" r="5" fill="#5a3825"/>
+              <circle cx="68" cy="82" r="2" fill="white"/>
+              <circle cx="84" cy="82" r="2" fill="white"/>
+              <ellipse cx="75" cy="93" rx="4" ry="3" fill="#a06040"/>
+              <path d="M68 99 Q75 106 82 99" stroke="#a06040" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Big smile -->
+              <path d="M66 99 Q75 110 84 99" stroke="#a06040" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <circle cx="59" cy="96" r="7" fill="#f4a0a0" opacity="0.6"/>
+              <circle cx="91" cy="96" r="7" fill="#f4a0a0" opacity="0.6"/>
+              <!-- Bear arm around panda -->
+              <path d="M103 122 Q125 100 140 120" stroke="#c8956c" stroke-width="14" fill="none" stroke-linecap="round"/>
+              <!-- Panda -->
+              <ellipse cx="128" cy="125" rx="30" ry="34" fill="white"/>
+              <circle cx="128" cy="85" r="26" fill="white"/>
+              <circle cx="110" cy="64" r="12" fill="#333"/>
+              <circle cx="146" cy="64" r="12" fill="#333"/>
+              <ellipse cx="119" cy="83" rx="10" ry="9" fill="#333"/>
+              <ellipse cx="137" cy="83" rx="10" ry="9" fill="#333"/>
+              <circle cx="119" cy="83" r="5.5" fill="white"/>
+              <circle cx="137" cy="83" r="5.5" fill="white"/>
+              <circle cx="120" cy="82" r="3" fill="#111"/>
+              <circle cx="138" cy="82" r="3" fill="#111"/>
+              <circle cx="121" cy="80" r="1.5" fill="white"/>
+              <circle cx="139" cy="80" r="1.5" fill="white"/>
+              <ellipse cx="128" cy="93" rx="4" ry="3" fill="#c06070"/>
+              <path d="M121 99 Q128 108 135 99" stroke="#c06070" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <circle cx="112" cy="95" r="7" fill="#ffb3c1" opacity="0.5"/>
+              <circle cx="144" cy="95" r="7" fill="#ffb3c1" opacity="0.5"/>
+              <!-- Panda arm around bear -->
+              <path d="M100 120 Q76 100 62 122" stroke="#333" stroke-width="12" fill="none" stroke-linecap="round"/>
+              <!-- Hearts -->
+              <text x="90" y="48" font-size="18">💗</text>
+              <text x="108" y="32" font-size="16">❤️</text>
+              <text x="124" y="48" font-size="14">💕</text>
+              <text x="72" y="38" font-size="12">✨</text>
+            </svg>
+          </div>
+          <h3>ALHAMDULILLAH! ❤️😂</h3>
+          <p>I knew there was a reason my heart was smiling!</p>
+          <p>Meli Jan, jokes aside, I am so grateful for the affection we share. I hope we always treat each other with kindness, respect, honesty, and understanding.</p>
+          <p>You are special to me, Ifra Yousaf, and I pray Allah guides us toward what is best for both of us.</p>
+          <p class="yes-hug-text">Now come here, my Meli Ladu. This panda owes you a birthday hug! 🐼🐻💗</p>
+        </div>
+      </div>
+
+      <div class="section-footer">
+        <button class="btn-primary hidden" id="s5-next" aria-label="Continue to the last letter">
+          One Last Letter ❤️
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6 — ONE LAST LETTER
+  ============================================================ -->
+  <section id="section-6" class="section hidden" aria-labelledby="s6-heading">
+    <div class="section-inner letter-section">
+      <div class="section-header">
+        <div class="section-icon" aria-hidden="true">❤️</div>
+        <h2 id="s6-heading" class="sr-only">One Last Letter</h2>
+      </div>
+
+      <!-- Birthday Wishes first -->
+      <div class="birthday-wishes" id="birthday-wishes">
+        <h2 class="bday-heading">To My Ifra Yousaf, on Your Special Day</h2>
+        <div class="bday-message" id="bday-message">
+          <!-- Main wish displayed -->
+        </div>
+        <button class="btn-secondary" id="another-wish-btn" aria-label="Send me another birthday wish">
+          Send Me Another Wish 💌
+        </button>
+      </div>
+
+      <!-- Envelope / Letter -->
+      <div class="letter-envelope-wrap">
+        <div class="letter-envelope" id="letter-envelope" tabindex="0" role="button" aria-label="Open the letter from Haseeb">
+          <div class="letter-envelope-front">
+            <div class="letter-address">
+              <span>To Ifra Yousaf,</span>
+              <span class="letter-subtitle">Meli Jan ❤️</span>
+            </div>
+            <div class="letter-seal">💌</div>
+            <p class="letter-prompt">Tap to open your letter</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Letter content (hidden until envelope opened) -->
+      <div class="letter-content hidden" id="letter-content" aria-live="polite">
+        <button class="btn-skip-anim" id="skip-letter-anim" aria-label="Skip animation and read the full letter">
+          Read immediately ↓
+        </button>
+        <div class="letter-paper" id="letter-paper">
+          <!-- Letter injected by JS for animation -->
+        </div>
+      </div>
+
+      <!-- Final celebration -->
+      <div class="final-celebration hidden" id="final-celebration">
+        <div class="final-confetti" id="final-confetti" aria-hidden="true"></div>
+        <div class="final-characters" aria-hidden="true">
+          <!-- Cake SVG -->
+          <div class="cake-illus">
+            <svg viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg" aria-label="Birthday cake">
+              <rect x="20" y="75" width="80" height="45" rx="10" fill="#ffb3c1"/>
+              <rect x="20" y="58" width="80" height="24" rx="8" fill="#ffd6e0"/>
+              <rect x="25" y="42" width="70" height="22" rx="7" fill="#fff0a0"/>
+              <!-- Frosting -->
+              <path d="M25 42 Q33 50 41 42 Q49 50 57 42 Q65 50 73 42 Q81 50 89 42 Q95 50 95 42" fill="#fffde0"/>
+              <!-- Candles -->
+              <rect x="40" y="28" width="6" height="16" rx="2.5" fill="#ff9eb5"/>
+              <rect x="57" y="24" width="6" height="20" rx="2.5" fill="#a0c4ff"/>
+              <rect x="74" y="28" width="6" height="16" rx="2.5" fill="#b5ead7"/>
+              <!-- Flames -->
+              <ellipse cx="43" cy="26" rx="3.5" ry="5.5" fill="#ffd700"/>
+              <ellipse cx="60" cy="22" rx="3.5" ry="5.5" fill="#ffd700"/>
+              <ellipse cx="77" cy="26" rx="3.5" ry="5.5" fill="#ffd700"/>
+              <!-- Decorations -->
+              <circle cx="35" cy="90" r="4" fill="#fff0a0"/>
+              <circle cx="55" cy="85" r="4" fill="#a0c4ff"/>
+              <circle cx="75" cy="90" r="4" fill="#ff9eb5"/>
+              <circle cx="95" cy="85" r="4" fill="#b5ead7"/>
+            </svg>
+          </div>
+          <!-- Final hug couple -->
+          <div class="final-couple">
+            <svg viewBox="0 0 160 140" xmlns="http://www.w3.org/2000/svg" aria-label="Bear and Panda hugging">
+              <!-- simplified final couple -->
+              <ellipse cx="55" cy="112" rx="27" ry="30" fill="#c8956c"/>
+              <circle cx="55" cy="75" r="23" fill="#c8956c"/>
+              <circle cx="40" cy="55" r="10" fill="#c8956c"/>
+              <circle cx="70" cy="55" r="10" fill="#c8956c"/>
+              <circle cx="40" cy="55" r="6" fill="#e8a880"/>
+              <circle cx="70" cy="55" r="6" fill="#e8a880"/>
+              <circle cx="48" cy="74" r="4" fill="#5a3825"/>
+              <circle cx="62" cy="74" r="4" fill="#5a3825"/>
+              <path d="M48 83 Q55 89 62 83" stroke="#a06040" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="42" cy="84" r="6" fill="#f4a0a0" opacity="0.6"/>
+              <circle cx="68" cy="84" r="6" fill="#f4a0a0" opacity="0.6"/>
+              <path d="M80 108 Q100 90 115 108" stroke="#c8956c" stroke-width="13" fill="none" stroke-linecap="round"/>
+              <!-- Panda -->
+              <ellipse cx="108" cy="112" rx="27" ry="30" fill="white"/>
+              <circle cx="108" cy="75" r="23" fill="white"/>
+              <circle cx="93" cy="55" r="10" fill="#333"/>
+              <circle cx="123" cy="55" r="10" fill="#333"/>
+              <ellipse cx="99" cy="73" rx="9" ry="8" fill="#333"/>
+              <ellipse cx="117" cy="73" rx="9" ry="8" fill="#333"/>
+              <circle cx="99" cy="73" r="5" fill="white"/>
+              <circle cx="117" cy="73" r="5" fill="white"/>
+              <circle cx="100" cy="72" r="2.5" fill="#111"/>
+              <circle cx="118" cy="72" r="2.5" fill="#111"/>
+              <path d="M102 82 Q108 89 114 82" stroke="#c06070" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M80 106 Q58 90 43 108" stroke="#333" stroke-width="11" fill="none" stroke-linecap="round"/>
+              <!-- Hearts -->
+              <text x="72" y="45" font-size="16">💗</text>
+              <text x="88" y="30" font-size="14">❤️</text>
+            </svg>
+          </div>
+        </div>
+
+        <h2 class="final-heading">Happy Birthday, Meli Shahzadi! 👑🎂</h2>
+        <p class="final-dua">May Allah bless your life, protect your family, fulfil your good wishes, and keep happiness close to your heart. Ameen. ❤️</p>
+
+        <button class="btn-hug" id="hug-btn" aria-label="One last hug for Meli Ladu">
+          One Last Hug for Meli Ladu? 🧸
+        </button>
+
+        <div class="hug-result hidden" id="hug-result" aria-live="polite">
+          <div class="hug-animation" aria-hidden="true">🧸💗🐼</div>
+          <p>If this little website made you smile even once, then my little mission was successful. You deserve so much happiness, Meli Jan. Happy Birthday, from your Haseeb. ❤️</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKIP NAV (accessibility)
+  ============================================================ -->
+  <a href="#section-0" class="skip-link">Skip to main content</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
