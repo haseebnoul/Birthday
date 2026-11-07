@@ -24,8 +24,9 @@ const CONFIG = {
     { nick: 'Meli Begum Jan', emoji: '💗' },
   ],
 
-  /* Audio: set the path to your mp3 file. Leave empty to hide the player. */
-  audioSrc: '', // e.g. 'music/song.mp3'
+  /* Audio: the background song placed beside this file. */
+  audioSrc: 'Saibo - Lyrical Audio - Shor In The City - Radhika Apte, Tusshar Kapoor - Shreya Ghoshal.mp4',
+  audioVolume: 0.16,
 
   /* Photo gallery: add { src: 'photos/pic1.jpg', caption: 'Caption text' } objects. */
   /* Galleries are rendered if photos array has entries. */
@@ -644,53 +645,48 @@ function initYesGame() {
 
   // NO button — moves away
   if (btnNo) {
-    const moveNoBtn = () => {
+    const positionNoButton = () => {
       if (yesAnswered) return;
-      yesNoCount++;
-      updateYesCaption();
       const container = el('yes-buttons');
       if (!container) return;
 
       const containerRect = container.getBoundingClientRect();
       const btnRect = btnNo.getBoundingClientRect();
 
-      // Generate a safe random offset within the parent container
-      const maxX = containerRect.width - btnRect.width;
-      const maxY = containerRect.height - btnRect.height;
+      const padding = 8;
+      const maxX = Math.max(padding, containerRect.width - btnRect.width - padding);
+      const maxY = Math.max(padding, containerRect.height - btnRect.height - padding);
 
-      const newX = Math.max(0, Math.min(maxX, Math.random() * maxX));
-      const newY = Math.max(0, Math.min(maxY, Math.random() * maxY));
-
-      // Use absolute positioning inside relative container
-      btnNo.style.position = 'absolute';
-      btnNo.style.left = newX + 'px';
-      btnNo.style.top = newY + 'px';
-
-      // Make container relative with enough height
-      container.style.position = 'relative';
-      container.style.minHeight = '100px';
+      btnNo.style.left = `${padding + Math.random() * (maxX - padding)}px`;
+      btnNo.style.top = `${padding + Math.random() * (maxY - padding)}px`;
     };
 
-    // Mouse: move when cursor gets within 60px
-    btnNo.addEventListener('mousemove', moveNoBtn);
-    btnNo.addEventListener('touchstart', (e) => { e.preventDefault(); moveNoBtn(); }, { passive: false });
-    btnNo.addEventListener('click', moveNoBtn); // fallback
-
-    // Keyboard: if focus reaches NO, describe what's happening
-    btnNo.addEventListener('focus', () => {
+    const moveNoBtn = () => {
       if (yesAnswered) return;
       yesNoCount++;
       updateYesCaption();
-      // Visually signal but don't actually move for keyboard users — allow escape
-    });
+      positionNoButton();
+    };
 
-    // If keyboard user presses Enter/Space on NO
-    btnNo.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
+    const moveIfNearby = (event) => {
+      if (yesAnswered || btnNo.style.pointerEvents === 'auto') return;
+      const buttonRect = btnNo.getBoundingClientRect();
+      const distanceX = Math.max(buttonRect.left - event.clientX, 0, event.clientX - buttonRect.right);
+      const distanceY = Math.max(buttonRect.top - event.clientY, 0, event.clientY - buttonRect.bottom);
+
+      if (Math.hypot(distanceX, distanceY) < 80) moveNoBtn();
+    };
+
+    const container = el('yes-buttons');
+    container?.addEventListener('pointermove', moveIfNearby);
+    container?.addEventListener('pointerdown', (event) => {
+      if (event.target === btnNo) {
+        event.preventDefault();
         moveNoBtn();
       }
     });
+
+    requestAnimationFrame(positionNoButton);
   }
 }
 
@@ -858,32 +854,40 @@ function initAudio() {
   }
 
   sourceEl.src = audioSrc;
+  audioEl.volume = CONFIG.audioVolume;
+  audioEl.preload = 'auto';
   audioEl.load();
   player.style.display = 'flex';
 
   let playing = false;
 
+  const setPlayingState = (isPlaying) => {
+    playing = isPlaying;
+    iconEl.textContent = isPlaying ? '⏸️' : '🎵';
+    labelEl.textContent = isPlaying ? 'Pause Music' : 'Play Music';
+    toggleBtn.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+  };
+
+  const playMusic = () => {
+    audioEl.play().then(() => setPlayingState(true)).catch(() => {
+      labelEl.textContent = 'Tap for music';
+    });
+  };
+
   const toggle = () => {
     if (playing) {
       audioEl.pause();
-      playing = false;
-      iconEl.textContent = '🎵';
-      labelEl.textContent = 'Play Music';
-      toggleBtn.setAttribute('aria-label', 'Play background music');
+      setPlayingState(false);
     } else {
-      audioEl.play().then(() => {
-        playing = true;
-        iconEl.textContent = '⏸️';
-        labelEl.textContent = 'Pause Music';
-        toggleBtn.setAttribute('aria-label', 'Pause background music');
-      }).catch(() => {
-        console.warn('[Birthday] Audio play failed — user gesture required.');
-      });
+      playMusic();
     }
   };
 
   toggleBtn.addEventListener('click', toggle);
-  player.addEventListener('click', toggle);
+  document.addEventListener('pointerdown', () => {
+    if (!playing) playMusic();
+  }, { once: true });
+  playMusic();
 }
 
 /* =============================================================

@@ -61,9 +61,9 @@
       <span id="audio-icon">🎵</span>
     </button>
     <span id="audio-label">Play Music</span>
-    <audio id="bg-audio" loop>
+    <audio id="bg-audio" autoplay loop preload="auto">
       <!-- Replace src with your audio file path, e.g. src="music/song.mp3" -->
-      <source id="audio-source" src="" type="audio/mpeg" />
+      <source id="audio-source" src="" type="audio/mp4" />
     </audio>
   </div>
 
@@ -644,7 +644,7 @@
           <p class="yes-question hidden" id="yes-question">Do you love Haseeb Ahmad?</p>
           <div class="yes-buttons hidden" id="yes-buttons">
             <button class="btn-yes" id="btn-yes" aria-label="Yes, my Haseeb!">YES, MY HASEEB! ❤️</button>
-            <button class="btn-no" id="btn-no" aria-label="No">NO 🙈</button>
+            <button class="btn-no" id="btn-no" aria-label="No" tabindex="-1">NO 🙈</button>
           </div>
           <p class="yes-caption hidden" id="yes-caption" aria-live="polite"></p>
           <button class="btn-secondary hidden" id="show-yes-question" aria-label="Continue">Continue 💌</button>
