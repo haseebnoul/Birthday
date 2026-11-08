@@ -28,9 +28,45 @@ const CONFIG = {
   audioSrc: 'Saibo - Lyrical Audio - Shor In The City - Radhika Apte, Tusshar Kapoor - Shreya Ghoshal.mp4',
   audioVolume: 0.16,
 
-  /* Photo gallery: add { src: 'photos/pic1.jpg', caption: 'Caption text' } objects. */
-  /* Galleries are rendered if photos array has entries. */
-  photos: [],
+  /* Photo album: every image placed beside this file is shown here. */
+  photos: [
+    {
+      src: 'WhatsApp Image 2026-11-08 at 18.44.18.jpeg',
+      alt: 'Illustrated portrait of Ifra in a black and colorful outfit',
+      title: 'The smile that brightens every room',
+      caption: 'Some people bring their own light with them. You are one of those rare people, Meli Jan.',
+    },
+    {
+      src: 'WhatsApp Image 2026-11-08 at 18.44.19 (1).jpeg',
+      alt: 'Illustrated close portrait of Ifra resting on the grass',
+      title: 'Softness looks beautiful on you',
+      caption: 'Even in the quietest moments, there is something about you that makes the whole world feel gentler.',
+    },
+    {
+      src: 'WhatsApp Image 2026-11-08 at 18.44.19.jpeg',
+      alt: 'Illustrated portrait of Ifra in a blue patterned outfit',
+      title: 'A little sparkle, entirely you',
+      caption: 'Your warmth, your joy, and that lovely little spark in your eyes are impossible not to adore.',
+    },
+    {
+      src: 'WhatsApp Image 2026-11-08 at 18.44.22.jpeg',
+      alt: 'Illustrated portrait of Ifra looking toward the viewer',
+      title: 'Beautiful in every chapter',
+      caption: 'I hope you always see yourself with the same tenderness and admiration that I see in you.',
+    },
+    {
+      src: 'WhatsApp Image 2026-11-08 at 18.48.06.jpeg',
+      alt: 'Illustrated portrait of Ifra in a traditional outfit',
+      title: 'A memory worth keeping close',
+      caption: 'This is the kind of moment I would keep in my heart: simple, bright, and completely you.',
+    },
+    {
+      src: 'WhatsApp Image 2026-11-08 at 18.48.09.jpeg',
+      alt: 'Illustrated photo of Ifra and Haseeb together',
+      title: 'My favorite kind of together',
+      caption: 'The best memories are the ones that make us laugh, feel close, and want to make many more.',
+    },
+  ],
 };
 
 /* =============================================================
@@ -468,7 +504,26 @@ function openHeartMessage(msg) {
 function initSection3() {
   renderGifts();
   renderQuiz(0);
+  renderPhotoAlbum();
   el('s3-next')?.addEventListener('click', () => { goToSection(4); initSection4(); });
+}
+
+function renderPhotoAlbum() {
+  const album = el('photo-album');
+  if (!album) return;
+
+  album.innerHTML = CONFIG.photos.map((photo, index) => `
+    <figure class="album-card" style="--album-delay: ${index * 0.08}s">
+      <div class="album-image-wrap">
+        <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+        <span class="album-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
+      </div>
+      <figcaption class="album-copy">
+        <h3>${photo.title}</h3>
+        <p>${photo.caption}</p>
+      </figcaption>
+    </figure>
+  `).join('');
 }
 
 function renderGifts() {
